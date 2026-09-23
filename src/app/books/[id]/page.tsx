@@ -12,7 +12,7 @@ interface IBookDetailsPageProps {
 }
 
 const getBooks = async (): Promise<IBook[]> => {
-    const response = await fetch('http://localhost:3000/booksData.json');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
 
     if (!response.ok) {
         throw new Error('Failed to fetch books');
